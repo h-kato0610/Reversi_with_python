@@ -1,3 +1,4 @@
+import game
 
 def main():
     Game()
