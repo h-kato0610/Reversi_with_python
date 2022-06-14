@@ -1,4 +1,6 @@
 import pygame
+import sys
+
 from pygame.locals import *
 
 class GameDefinitions():
@@ -17,9 +19,29 @@ class Game():
     def __init__(self):
         definitions = GameDefinitions()
         pygame.init()
-        pygame.screen = \
+        self.screen = pygame.screen = \
             pygame.display.set_mode(definitions.display_size())
         pygame.display.set_caption(definitions.display_caption())
+
+        self.start()
+
+    def start(self):
+        while(True):
+            # 背景色をRGBAで指定。
+            self.screen.fill((0, 0, 0, 0))
+            # ミリ秒での更新間隔。
+            pygame.time.wait(30)
+            pygame.display.update()
+
+            # 終了処理
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == KEYDOWN:
+                    if event.key == K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
 
     def __is_winner(self):
         # TODO implemented yet
