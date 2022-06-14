@@ -31,7 +31,7 @@ class Game():
 
         self.start()
 
-    def start(self):
+    def __start(self):
         while(True):
             # 背景色をRGBAで指定。
             self.screen.fill(self.definitions.background_color())
@@ -49,7 +49,19 @@ class Game():
                         pygame.quit()
                         sys.exit()
 
+    def __restart(self):
+        # TODO implemented yet
+        raise NotImplementedError
+
+    def __end(self):
+        # TODO implemented yet
+        raise NotImplementedError
+
     def __is_winner(self):
+        # TODO implemented yet
+        raise NotImplementedError
+
+    def menu_bar(self):
         # TODO implemented yet
         raise NotImplementedError
 
