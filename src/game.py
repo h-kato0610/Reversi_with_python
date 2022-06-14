@@ -10,7 +10,10 @@ class GameDefinitions():
           設定ファイル化
     """
     def display_size(self):
-        return (400, 400)
+        width = 600
+        # 30pxはメニューの領域を想定
+        height = 430
+        return (width, height)
 
     def display_caption(self):
         return 'Reversi'
@@ -25,11 +28,11 @@ class Game():
     def __init__(self):
         self.definitions = GameDefinitions()
         pygame.init()
-        self.screen = pygame.screen = \
+        self.screen = \
             pygame.display.set_mode(self.definitions.display_size())
         pygame.display.set_caption(self.definitions.display_caption())
 
-        self.start()
+        self.__start()
 
     def __start(self):
         while(True):
