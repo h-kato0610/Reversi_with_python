@@ -1,12 +1,25 @@
 import pygame
 from pygame.locals import *
 
+class GameDefinitions():
+    """
+    定数を記載。
+    TODO: 外だし
+          設定ファイル化
+    """
+    def display_size():
+        return (400, 400)
+
+    def display_caption():
+        return 'Reversi'
+
 class Game():
     def __init__(self):
-        display_size = (400, 400)
+        definitions = GameDefinitions()
         pygame.init()
-        pygame.screen = pygame.display.set_mode(display_size)
-        pygame.display.set_caption('HelloWorld')
+        pygame.screen = \
+            pygame.display.set_mode(definitions.display_size)
+        pygame.display.set_caption(definitions.captions)
 
     def __is_winner(self):
         # TODO implemented yet
@@ -21,7 +34,7 @@ class Game():
         return None
 
     def stone(self):
-        # TODO implemented yet
+        # TODO implemented yetする
         return None
 
     def player(self):
