@@ -15,22 +15,28 @@ class GameDefinitions():
     def display_caption(self):
         return 'Reversi'
 
+    def background_color(self):
+        return (0, 0, 0, 0)
+
+    def time_wait(self):
+        return 30
+
 class Game():
     def __init__(self):
-        definitions = GameDefinitions()
+        self.definitions = GameDefinitions()
         pygame.init()
         self.screen = pygame.screen = \
-            pygame.display.set_mode(definitions.display_size())
-        pygame.display.set_caption(definitions.display_caption())
+            pygame.display.set_mode(self.definitions.display_size())
+        pygame.display.set_caption(self.definitions.display_caption())
 
         self.start()
 
     def start(self):
         while(True):
             # 背景色をRGBAで指定。
-            self.screen.fill((0, 0, 0, 0))
+            self.screen.fill(self.definitions.background_color())
             # ミリ秒での更新間隔。
-            pygame.time.wait(30)
+            pygame.time.wait(self.definitions.time_wait())
             pygame.display.update()
 
             # 終了処理
