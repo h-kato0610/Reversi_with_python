@@ -45,20 +45,18 @@ class Game():
             # 終了処理
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.__end()
                 if event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
-                        pygame.quit()
-                        sys.exit()
+                        self.__end()
 
     def __restart(self):
         # TODO implemented yet
         raise NotImplementedError
 
     def __end(self):
-        # TODO implemented yet
-        raise NotImplementedError
+        pygame.quit()
+        sys.exit()
 
     def __is_winner(self):
         # TODO implemented yet
