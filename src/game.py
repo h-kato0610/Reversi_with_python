@@ -10,9 +10,9 @@ class GameDefinitions():
           設定ファイル化
     """
     def display_size(self):
-        width = 600
+        width = 1200
         # 30pxはメニューの領域を想定
-        height = 430
+        height = 630
         return (width, height)
 
     def display_caption(self):
