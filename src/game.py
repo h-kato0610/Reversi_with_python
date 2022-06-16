@@ -19,10 +19,15 @@ class GameDefinitions():
         return 'Reversi'
 
     def background_color(self):
-        return (0, 0, 0, 0)
+        r = 0
+        g = 0
+        b = 0
+        a = 0
+        return (r, g, b, a)
 
     def time_wait(self):
-        return 30
+        fps = 30
+        return fps
 
 class Game():
     def __init__(self):
@@ -45,20 +50,18 @@ class Game():
             # 終了処理
             for event in pygame.event.get():
                 if event.type == QUIT:
-                    pygame.quit()
-                    sys.exit()
+                    self.__end()
                 if event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
-                        pygame.quit()
-                        sys.exit()
+                        self.__end()
 
     def __restart(self):
         # TODO implemented yet
         raise NotImplementedError
 
     def __end(self):
-        # TODO implemented yet
-        raise NotImplementedError
+        pygame.quit()
+        sys.exit()
 
     def __is_winner(self):
         # TODO implemented yet
