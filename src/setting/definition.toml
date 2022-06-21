@@ -1,11 +1,13 @@
 [Game]
-width=1200
-height=630
+    [display_size]
+        width=1200
+        height=630
 
-# backgroundcolor
-red=0
-green=0
-blue=0
-alpha=0
+    [background_color]
+        red=0
+        green=0
+        blue=0
+        alpha=0
 
-fps=30
+    [fps]
+        time=30
