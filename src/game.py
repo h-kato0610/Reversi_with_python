@@ -39,8 +39,10 @@ class Game():
     def __init__(self):
         self.settings = fr_toml()
         self.settings.set_file_path(pathlib.Path(SETTING_PATH + SETTING_FILENAME))
+        self.settings.load_file()
 
         self.definitions = GameDefinitions()
+
         pygame.init()
         self.screen = \
             pygame.display.set_mode(self.definitions.display_size())

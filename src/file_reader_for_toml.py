@@ -7,11 +7,9 @@ class FileReaderForToml(FileReader):
         self._file_path = file_path
 
     def load_file(self):
-        """Tomlファイルを読み込む"""
         try:
             with open(self._file_path, encoding='utf8') as f:
                 toml_file = toml.load(f)
-                logger.debug(f'read: {self._file_path}')
                 self._contents = toml_file
         except FileNotFoundError:
             raise FileNotFoundError(error_value)
