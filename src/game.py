@@ -2,6 +2,7 @@ import pygame
 import sys
 import pathlib
 
+from definitions import Definitions
 from file_reader_for_toml import FileReaderForToml as fr_toml
 
 from pygame.locals import *
@@ -37,11 +38,15 @@ class GameDefinitions():
 
 class Game():
     def __init__(self):
-        self.settings = fr_toml()
-        self.settings.set_file_path(pathlib.Path(SETTING_PATH + SETTING_FILENAME))
-        self.settings.load_file()
+        tmp = fr_toml()
+        tmp.set_file_path(pathlib.Path(SETTING_PATH + SETTING_FILENAME))
+        tmp.load_file()
+        self.settings = tmp.get_contents()
 
-        self.definitions = GameDefinitions()
+        definition_file_path = pathlib.Path(\
+            self.settings['definition_file']['directory'] + \
+            self.settings['definition_file']['file_name'])
+        self.definitions = Definitions(definition_file_path)
 
         pygame.init()
         self.screen = \

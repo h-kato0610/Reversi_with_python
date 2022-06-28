@@ -9,5 +9,4 @@ class Definitions():
         self.definitioin_file.load_file()
 
     def get_game_definitions():
-        # Implemented yet
-        return None
+        return self.definitioin_file['Game']
