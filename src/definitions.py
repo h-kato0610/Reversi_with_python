@@ -8,7 +8,7 @@ class Definitions():
         self.definition_file = tmp.get_contents()
 
     def get_display_caption(self):
-        caption = self.definition_file['game']['display_caption']['caption']
+        caption = self.definition_file['game']['display_caption']
         return caption
 
     def get_display_size(self):
@@ -27,5 +27,5 @@ class Definitions():
         return (red, green, blue, alpha)
 
     def get_display_time_wait(self):
-        time = int(self.definition_file['game']['display_time_wait']['time'])
+        time = int(self.definition_file['game']['display_time_wait'])
         return time
