@@ -1,16 +1,12 @@
 [game]
-    [caption]
-        display_caption="reversi"
+display_caption.caption="reversi"
 
-    [display_size]
-        width=1200
-        height=630
+display_size.width=1200
+display_size.heigh=630
 
-    [background_color]
-        red=0
-        green=0
-        blue=0
-        alpha=0
+display_background_color.red=0
+display_background_color.green=0
+display_background_color.blue=0
+display_background_color.alph=0
 
-    [fps]
-        time=30
+display_time_wait.time=30
