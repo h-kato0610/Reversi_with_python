@@ -7,24 +7,25 @@ class Definitions():
         tmp.load_file()
         self.definition_file = tmp.get_contents()
 
-    def get_caption(self):
-        caption = self.definitioin_file['game']['caption']['display_caption'])
+    def get_display_caption(self):
+        caption = self.definition_file['game']['display_caption']['caption']
         return caption
 
     def get_display_size(self):
-        display_size = self.definitioin_file['game']['display_size']
+        display_size = self.definition_file['game']['display_size']
         width = int(display_size['width'])
         height = int(display_size['height'])
         return (width, height)
 
-    def get_background_color(self):
-        background_color = self.definitioin_file['game']['background_color']
-        red = int(backdound_color['red'])
-        green = int(backdound_color['green'])
-        blue = int(backdound_color['blue'])
-        alpha = int(backdound_color['alpha'])
+    def get_display_background_color(self):
+        background_color = \
+            self.definition_file['game']['display_background_color']
+        red = int(background_color['red'])
+        green = int(background_color['green'])
+        blue = int(background_color['blue'])
+        alpha = int(background_color['alpha'])
         return (red, green, blue, alpha)
 
-    def get_fps(self):
-        fps = int(self.definitions_file['game']['fps']['time'])
-        return fps
+    def get_display_time_wait(self):
+        time = int(self.definition_file['game']['display_time_wait']['time'])
+        return time

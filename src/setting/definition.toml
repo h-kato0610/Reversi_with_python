@@ -2,11 +2,11 @@
 display_caption.caption="reversi"
 
 display_size.width=1200
-display_size.heigh=630
+display_size.height=630
 
 display_background_color.red=0
 display_background_color.green=0
 display_background_color.blue=0
-display_background_color.alph=0
+display_background_color.alpha=0
 
 display_time_wait.time=30

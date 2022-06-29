@@ -10,31 +10,30 @@ from pygame.locals import *
 SETTING_PATH = 'setting/'
 SETTING_FILENAME = 'setting.toml'
 
-class GameDefinitions():
-    """
-    定数を記載。
-    TODO: 外だし
-          設定ファイル化
-    """
-    def display_size(self):
-        width = 1200
-        # 30pxはメニューの領域を想定
-        height = 630
-        return (width, height)
-
-    def display_caption(self):
-        return 'Reversi'
-
-    def background_color(self):
-        r = 0
-        g = 0
-        b = 0
-        a = 0
-        return (r, g, b, a)
-
-    def time_wait(self):
-        fps = 30
-        return fps
+# class GameDefinitions():
+#     """
+#     定数を記載。
+#     TODO: 外だし
+#           設定ファイル化
+#     """
+#     def display_size(self):
+#         width = 1200 #         # 30pxはメニューの領域を想定
+#         height = 630
+#         return (width, height)
+# 
+#     def display_caption(self):
+#         return 'Reversi'
+# 
+#     def background_color(self):
+#         r = 0
+#         g = 0
+#         b = 0
+#         a = 0
+#         return (r, g, b, a)
+# 
+#     def time_wait(self):
+#         fps = 30
+#         return fps
 
 class Game():
     def __init__(self):
@@ -50,17 +49,17 @@ class Game():
 
         pygame.init()
         self.screen = \
-            pygame.display.set_mode(self.definitions.display_size())
-        pygame.display.set_caption(self.definitions.display_caption())
+            pygame.display.set_mode(self.definitions.get_display_size())
+        pygame.display.set_caption(self.definitions.get_display_caption())
 
         self.__start()
 
     def __start(self):
         while(True):
             # 背景色をRGBAで指定。
-            self.screen.fill(self.definitions.background_color())
+            self.screen.fill(self.definitions.get_display_background_color())
             # ミリ秒での更新間隔。
-            pygame.time.wait(self.definitions.time_wait())
+            pygame.time.wait(self.definitions.get_display_time_wait())
             pygame.display.update()
 
             # 終了処理
