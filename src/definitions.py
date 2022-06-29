@@ -8,10 +8,23 @@ class Definitions():
         self.definition_file = tmp.get_contents()
 
     def get_caption(self):
-        caption = self.definitioin_file['game']['caption'])
+        caption = self.definitioin_file['game']['caption']['display_caption'])
         return caption
 
     def get_display_size(self):
-        width = int(self.definitioin_file['game']['display_size']['width'])
-        height = int(self.definitioin_file['game']['display_size']['height'])
+        display_size = self.definitioin_file['game']['display_size']
+        width = int(display_size['width'])
+        height = int(display_size['height'])
         return (width, height)
+
+    def get_background_color(self):
+        background_color = self.definitioin_file['game']['background_color']
+        red = int(backdound_color['red'])
+        green = int(backdound_color['green'])
+        blue = int(backdound_color['blue'])
+        alpha = int(backdound_color['alpha'])
+        return (red, green, blue, alpha)
+
+    def get_fps(self):
+        fps = int(self.definitions_file['game']['fps']['time'])
+        return fps
