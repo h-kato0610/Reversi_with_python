@@ -1,4 +1,6 @@
-[Game]
+[game]
+    [caption]
+        display_caption="reversi"
     [display_size]
         width=1200
         height=630
