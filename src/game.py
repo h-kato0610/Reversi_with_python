@@ -35,7 +35,7 @@ SETTING_FILENAME = 'setting.toml'
 #         fps = 30
 #         return fps
 
-class Game():
+class Game:
     def __init__(self):
         tmp = fr_toml()
         tmp.set_file_path(pathlib.Path(SETTING_PATH + SETTING_FILENAME))

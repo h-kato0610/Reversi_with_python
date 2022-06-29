@@ -1,6 +1,6 @@
 from file_reader_for_toml import FileReaderForToml as fr_toml
 
-class Definitions():
+class Definitions:
     def __init__(self, definition_file_path):
         tmp = fr_toml()
         tmp.set_file_path(definition_file_path)
