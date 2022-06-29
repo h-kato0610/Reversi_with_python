@@ -10,9 +10,5 @@ class FileReader(metaclass=ABCMeta):
         raise NotImplementedError()
 
     @abstractmethod
-    def load_file(self):
-        raise NotImplementedError()
-
-    @abstractmethod
     def get_contents(self):
         raise NotImplementedError()

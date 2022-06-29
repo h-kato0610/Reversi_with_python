@@ -4,7 +4,6 @@ class Definitions:
     def __init__(self, definition_file_path):
         tmp = fr_toml()
         tmp.set_file_path(definition_file_path)
-        tmp.load_file()
         self.definition_file = tmp.get_contents()
 
     def get_display_caption(self):

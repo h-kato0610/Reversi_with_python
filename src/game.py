@@ -39,7 +39,6 @@ class Game:
     def __init__(self):
         tmp = fr_toml()
         tmp.set_file_path(pathlib.Path(SETTING_PATH + SETTING_FILENAME))
-        tmp.load_file()
         self.settings = tmp.get_contents()
 
         definition_file_path = pathlib.Path(\
