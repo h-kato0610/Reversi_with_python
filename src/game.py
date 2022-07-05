@@ -2,6 +2,7 @@ import pygame
 import sys
 import pathlib
 
+from board import Board
 from definitions import Definitions
 from file_reader_for_toml import FileReaderForToml as fr_toml
 
@@ -29,9 +30,14 @@ class Game:
         self.__start()
 
     def __start(self):
+        # 背景色をRGBAで指定。
+        self.screen.fill(self.definitions.get_display_background_color())
+
+        board = []
+        [board.append(Board()) for i in range(64)]
+        # board.create_board(pygame, self.screen)
+
         while(True):
-            # 背景色をRGBAで指定。
-            self.screen.fill(self.definitions.get_display_background_color())
             # ミリ秒での更新間隔。
             pygame.time.wait(self.definitions.get_display_time_wait())
             pygame.display.update()
