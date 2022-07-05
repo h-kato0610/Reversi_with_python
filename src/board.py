@@ -1,5 +1,7 @@
 import pygame
 
+from stone import Stone
+
 from pygame.locals import *
 
 class Board:
@@ -9,7 +11,7 @@ class Board:
         self.w = w
         self.h = h
         self.rect = None
-        self.white_or_black = None
+        self.stone = Stone()
         
     def create_board(self):
         x = 1 * self.x * self.w
