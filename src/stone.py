@@ -22,4 +22,4 @@ class Stone:
         color = self.stone_color['stone_black_color'] if self.is_black else self.stone_color['stone_white_color']
         
         # pygame.draw.ellipse(screen, color, self.__elipse)
-        pygame.draw.ellipse(screen, (0, 0, 0), self.__elipse)
+        pygame.draw.ellipse(screen, color, self.__elipse)
