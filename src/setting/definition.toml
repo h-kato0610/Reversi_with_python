@@ -11,5 +11,13 @@ display_background_color.alpha=0
 
 display_time_wait=30
 
+[board]
 all_square=64
 one_line=8
+
+square.width=100
+square.height=100
+square_color.red=0
+square_color.green=255
+square_color.blue=0
+square_color.alpha=0

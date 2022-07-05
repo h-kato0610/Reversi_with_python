@@ -33,15 +33,13 @@ class Game:
         # 背景色をRGBAで指定。
         self.screen.fill(self.definitions.get_display_background_color())
 
-        one_line = self.definitions.get_one_line()
-        boards = []
-        [boards.append(Board(x, y)) for x in range(one_line) \
-            for y in range (one_line)]
+        boards = self.__initialize_board(pygame)
 
         while(True):
             # ミリ秒での更新間隔。
             pygame.time.wait(self.definitions.get_display_time_wait())
-            pygame.display.update()
+            for board in boards:
+                pygame.display.update(board.draw_board())
 
             # 終了処理
             for event in pygame.event.get():
@@ -67,9 +65,20 @@ class Game:
         # TODO implemented yet
         raise NotImplementedError
 
-    def board(self):
-        # TODO implemented yet
-        raise NotImplementedError
+    def __initialize_board(self, pygame):
+        one_line = self.definitions.get_one_line()
+        square_width = self.definitions.get_square_width()
+        square_height = self.definitions.get_square_height()
+        boards = []
+        [boards.append(Board(x, y, square_width, square_height)) \
+            for x in range(one_line) \
+            for y in range (one_line)]
+
+        square_color = self.definitions.get_square_color()
+        [_.create_board(pygame, self.screen, square_color) for _ in boards]
+
+        # initialize_board
+        return boards
 
     def score(self):
         # TODO implemented yet

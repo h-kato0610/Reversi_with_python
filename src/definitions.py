@@ -30,9 +30,26 @@ class Definitions:
         return time
 
     def get_all_square(self):
-        square = int(self.definition_file['game']['all_square'])
+        square = int(self.definition_file['board']['all_square'])
         return square
 
     def get_one_line(self):
-        one_line = int(self.definition_file['game']['one_line'])
+        one_line = int(self.definition_file['board']['one_line'])
         return one_line
+
+    def get_square_width(self):
+        square_width = int(self.definition_file['board']['square']['width'])
+        return square_width
+
+    def get_square_height(self):
+        square_height = int(self.definition_file['board']['square']['height'])
+        return square_height
+
+    def get_square_color(self):
+        background_color = \
+            self.definition_file['board']['square_color']
+        red = int(background_color['red'])
+        green = int(background_color['green'])
+        blue = int(background_color['blue'])
+        alpha = int(background_color['alpha'])
+        return (red, green, blue, alpha)
