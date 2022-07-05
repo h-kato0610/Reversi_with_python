@@ -34,12 +34,15 @@ class Game:
         self.screen.fill(self.definitions.get_display_background_color())
 
         boards = self.__initialize_board(pygame)
-
+        square_color = self.definitions.get_square_color()
         while(True):
             # ミリ秒での更新間隔。
             pygame.time.wait(self.definitions.get_display_time_wait())
+
             for board in boards:
-                pygame.display.update(board.draw_board())
+                board.draw_square(pygame, self.screen, square_color)
+
+            pygame.display.update()
 
             # 終了処理
             for event in pygame.event.get():
@@ -69,13 +72,13 @@ class Game:
         one_line = self.definitions.get_one_line()
         square_width = self.definitions.get_square_width()
         square_height = self.definitions.get_square_height()
+        square_border = self.definitions.get_square_border()
         boards = []
-        [boards.append(Board(x, y, square_width, square_height)) \
+        [boards.append(Board(x, y, square_width, square_height, square_border)) \
             for x in range(one_line) \
             for y in range (one_line)]
 
-        square_color = self.definitions.get_square_color()
-        [_.create_board(pygame, self.screen, square_color) for _ in boards]
+        [_.create_board() for _ in boards]
 
         # initialize_board
         return boards
