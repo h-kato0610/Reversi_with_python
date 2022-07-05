@@ -10,7 +10,7 @@ class Board:
         self.y = y
         self.w = w
         self.h = h
-        self.rect = None
+        self.__rect = None
         self.stone = Stone(self.x, self.y, self.w, self.h, stone_span)
         
     def create_board(self):
@@ -18,10 +18,10 @@ class Board:
         y = 1 * self.y * self.w
         w = self.x + self.w
         h = self.y + self.h
-        self.rect = (x, y, w, h)
+        self.__rect = (x, y, w, h)
 
     def draw_square(self, pygame, screen, color):
-        return pygame.draw.rect(screen, color, self.rect, width=1)
+        return pygame.draw.rect(screen, color, self.__rect, width=1)
 
     def put(self, pygame, screen, is_black):
         self.stone.is_black = is_black
