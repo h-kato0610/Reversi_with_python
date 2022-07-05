@@ -40,7 +40,7 @@ class Game:
             pygame.time.wait(self.definitions.get_display_time_wait())
 
             for board in boards:
-                board.draw_square(pygame, self.screen, square_color)
+                [i.draw_square(pygame, self.screen, square_color) for i in board]
 
             pygame.display.update()
 
@@ -73,13 +73,17 @@ class Game:
         square_width = self.definitions.get_square_width()
         square_height = self.definitions.get_square_height()
         boards = []
-        [boards.append(Board(x, y, square_width, square_height)) \
-            for x in range(one_line) \
-            for y in range (one_line)]
-
-        [_.create_board() for _ in boards]
+        for y in range(one_line):
+            tmp_list = []
+            for x in range(one_line):
+                tmp_board = Board(x, y, square_width, square_height)
+                tmp_board.create_board()
+                tmp_list.append(tmp_board)
+            boards.append(tmp_list)
 
         # initialize_board
+        all_square = self.definitions.get_all_square()
+        
         return boards
 
     def score(self):
