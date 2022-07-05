@@ -11,9 +11,6 @@ class Board:
         self.rect = None
         self.white_or_black = None
         
-    def __put_initialize_potition(self):
-        raise NotImplementedError
-
     def create_board(self):
         x = 1 * self.x * self.w
         y = 1 * self.y * self.w
