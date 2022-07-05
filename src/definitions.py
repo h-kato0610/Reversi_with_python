@@ -30,5 +30,9 @@ class Definitions:
         return time
 
     def get_all_square(self):
-        all_square = int(self.definition_file['game']['all_square'])
-        return all_square
+        square = int(self.definition_file['game']['all_square'])
+        return square
+
+    def get_one_line(self):
+        one_line = int(self.definition_file['game']['one_line'])
+        return one_line

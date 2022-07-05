@@ -8,10 +8,9 @@ HEIGHT = 100
 COLOR = (0, 255, 0, 0)
 
 class Board:
-    def __init__(self):
-        self.__squares = []
-        self.x = None
-        self.y = None
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
         self.white_or_black = None
         
     def __initialize_board(self):

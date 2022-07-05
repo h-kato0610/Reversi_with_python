@@ -33,9 +33,10 @@ class Game:
         # 背景色をRGBAで指定。
         self.screen.fill(self.definitions.get_display_background_color())
 
-        board = []
-        [board.append(Board()) for i in range(64)]
-        # board.create_board(pygame, self.screen)
+        one_line = self.definitions.get_one_line()
+        boards = []
+        [boards.append(Board(x, y)) for x in range(one_line) \
+            for y in range (one_line)]
 
         while(True):
             # ミリ秒での更新間隔。
