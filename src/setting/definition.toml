@@ -23,7 +23,6 @@ square_color.blue=0
 square_color.alpha=0
 
 [stone]
-span=5.5
 black.red=0
 black.green=0
 black.blue=0

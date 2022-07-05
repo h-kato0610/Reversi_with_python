@@ -15,8 +15,11 @@ class Stone:
             self.is_black = False
 
     def create_stone(self):
-        # FIXME: Stoneはうまく計算できていない。今後の課題
-        self.__elipse = (self.x, self.y, self.w - self.stone_span, self.h - self.stone_span)
+        x = 1 * self.x * self.w
+        y = 1 * self.y * self.w
+        w = self.x + self.w
+        h = self.y + self.h
+        self.__elipse = (x, y, w, h)
 
     def draw_stone(self, pygame, screen, color=None):
         color = self.stone_color['stone_black_color'] if self.is_black else self.stone_color['stone_white_color']
