@@ -53,3 +53,7 @@ class Definitions:
         blue = int(background_color['blue'])
         alpha = int(background_color['alpha'])
         return (red, green, blue, alpha)
+
+    def get_stone_span(self):
+        stone_span = float(self.definition_file['stone']['span'])
+        return stone_span

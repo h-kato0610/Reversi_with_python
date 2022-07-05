@@ -5,13 +5,13 @@ from stone import Stone
 from pygame.locals import *
 
 class Board:
-    def __init__(self, x, y, w, h):
+    def __init__(self, x, y, w, h, stone_span):
         self.x = x
         self.y = y
         self.w = w
         self.h = h
         self.rect = None
-        self.stone = Stone()
+        self.stone = Stone(self.x, self.y, self.w, self.h, stone_span)
         
     def create_board(self):
         x = 1 * self.x * self.w
@@ -23,8 +23,11 @@ class Board:
     def draw_square(self, pygame, screen, color):
         return pygame.draw.rect(screen, color, self.rect, width=1)
 
-    def put(self, is_black):
+    def put(self, pygame, screen, is_black):
         self.stone.is_black = is_black
+
+        self.stone.create_stone()
+        self.stone.draw_stone(pygame, screen)
 
     def update_board(self):
         raise NotImplementedError

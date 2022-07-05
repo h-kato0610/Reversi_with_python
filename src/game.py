@@ -35,13 +35,13 @@ class Game:
 
         boards = self.__initialize_board(pygame)
         square_color = self.definitions.get_square_color()
+
+        for board in boards:
+            [i.draw_square(pygame, self.screen, square_color) for i in board]
+
         while(True):
             # ミリ秒での更新間隔。
             pygame.time.wait(self.definitions.get_display_time_wait())
-
-            for board in boards:
-                [i.draw_square(pygame, self.screen, square_color) for i in board]
-
             pygame.display.update()
 
             # 終了処理
@@ -72,27 +72,27 @@ class Game:
         one_line = self.definitions.get_one_line()
         square_width = self.definitions.get_square_width()
         square_height = self.definitions.get_square_height()
+        stone_span = self.definitions.get_stone_span()
         boards = []
         for y in range(one_line):
             tmp_list = []
             for x in range(one_line):
-                tmp_board = Board(x, y, square_width, square_height)
+                tmp_board = Board(x, y, square_width, square_height, stone_span)
                 tmp_board.create_board()
                 tmp_list.append(tmp_board)
             boards.append(tmp_list)
 
         # initialize_position_board
-        all_square = self.definitions.get_all_square()
-        initialize_pos_with_black1 = (4, 3)
-        initialize_pos_with_white1 = (3, 3)
-        initialize_pos_with_black2 = (3, 4)
-        initialize_pos_with_white2 = (4, 4)
+        init_pos_black1 = (4, 3)
+        init_pos_white1 = (3, 3)
+        init_pos_black2 = (3, 4)
+        init_pos_white2 = (4, 4)
 
         is_black = True
-        boards[initialize_pos_with_black1[0]][initialize_pos_with_black1[1]].put(is_black)
-        boards[initialize_pos_with_white1[0]][initialize_pos_with_white1[1]].put(not is_black)
-        boards[initialize_pos_with_black2[0]][initialize_pos_with_black2[1]].put(is_black)
-        boards[initialize_pos_with_white2[0]][initialize_pos_with_white2[1]].put(not is_black)
+        boards[init_pos_black1[0]][init_pos_black1[1]].put(pygame, self.screen, is_black)
+        boards[init_pos_white1[0]][init_pos_white1[1]].put(pygame, self.screen, not is_black)
+        boards[init_pos_black2[0]][init_pos_black2[1]].put(pygame, self.screen, is_black)
+        boards[init_pos_white2[0]][init_pos_white2[1]].put(pygame, self.screen, not is_black)
         
         return boards
 
