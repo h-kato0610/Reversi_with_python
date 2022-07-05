@@ -4,9 +4,9 @@ display_caption="reversi"
 display_size.width=500
 display_size.height=500
 
-display_background_color.red=30
-display_background_color.green=30
-display_background_color.blue=30
+display_background_color.red=25
+display_background_color.green=25
+display_background_color.blue=25
 display_background_color.alpha=0
 
 display_time_wait=30
