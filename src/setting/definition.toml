@@ -10,3 +10,5 @@ display_background_color.blue=0
 display_background_color.alpha=0
 
 display_time_wait=30
+
+game.all_square=64
