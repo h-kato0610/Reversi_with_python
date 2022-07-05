@@ -73,11 +73,13 @@ class Game:
         square_width = self.definitions.get_square_width()
         square_height = self.definitions.get_square_height()
         stone_span = self.definitions.get_stone_span()
+        stone_color = self.definitions.get_stone_color()
+        stone_arg = {'stone_span': stone_span, 'stone_color': stone_color}
         boards = []
         for y in range(one_line):
             tmp_list = []
             for x in range(one_line):
-                tmp_board = Board(x, y, square_width, square_height, stone_span)
+                tmp_board = Board(x, y, square_width, square_height, stone_arg)
                 tmp_board.create_board()
                 tmp_list.append(tmp_board)
             boards.append(tmp_list)

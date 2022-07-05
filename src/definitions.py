@@ -57,3 +57,14 @@ class Definitions:
     def get_stone_span(self):
         stone_span = float(self.definition_file['stone']['span'])
         return stone_span
+
+    def get_stone_color(self):
+        stone_black_color = self.definition_file['stone']['black']
+        stone_white_color = self.definition_file['stone']['white']
+
+        stone_color = {
+            'stone_black_color' : (stone_black_color['red'], stone_black_color['green'], stone_black_color['blue']),
+            'stone_white_color' : (stone_white_color['red'], stone_white_color['green'], stone_white_color['blue'])
+        }
+        
+        return stone_color

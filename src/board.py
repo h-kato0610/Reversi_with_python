@@ -5,13 +5,13 @@ from stone import Stone
 from pygame.locals import *
 
 class Board:
-    def __init__(self, x, y, w, h, stone_span):
+    def __init__(self, x, y, w, h, stone_arg):
         self.x = x
         self.y = y
         self.w = w
         self.h = h
         self.__rect = None
-        self.stone = Stone(self.x, self.y, self.w, self.h, stone_span)
+        self.stone = Stone(self.x, self.y, self.w, self.h, stone_arg)
         
     def create_board(self):
         x = 1 * self.x * self.w
