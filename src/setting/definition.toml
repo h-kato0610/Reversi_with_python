@@ -11,4 +11,5 @@ display_background_color.alpha=0
 
 display_time_wait=30
 
-game.all_square=64
+all_square=64
+one_line=8
