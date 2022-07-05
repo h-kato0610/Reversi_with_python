@@ -1,8 +1,8 @@
 [game]
 display_caption="reversi"
 
-display_size.width=1200
-display_size.height=630
+display_size.width=500
+display_size.height=500
 
 display_background_color.red=0
 display_background_color.green=0
@@ -15,8 +15,8 @@ display_time_wait=30
 all_square=64
 one_line=8
 
-square.width=100
-square.height=100
+square.width=50
+square.height=50
 square_color.red=0
 square_color.green=255
 square_color.blue=0

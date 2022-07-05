@@ -72,9 +72,8 @@ class Game:
         one_line = self.definitions.get_one_line()
         square_width = self.definitions.get_square_width()
         square_height = self.definitions.get_square_height()
-        square_border = self.definitions.get_square_border()
         boards = []
-        [boards.append(Board(x, y, square_width, square_height, square_border)) \
+        [boards.append(Board(x, y, square_width, square_height)) \
             for x in range(one_line) \
             for y in range (one_line)]
 

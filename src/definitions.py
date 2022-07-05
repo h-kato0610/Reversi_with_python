@@ -45,10 +45,6 @@ class Definitions:
         square_height = int(self.definition_file['board']['square']['height'])
         return square_height
 
-    def get_square_border(self):
-        square_border = int(self.definition_file['board']['square']['border'])
-        return square_border
-
     def get_square_color(self):
         background_color = \
             self.definition_file['board']['square_color']
