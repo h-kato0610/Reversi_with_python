@@ -81,8 +81,18 @@ class Game:
                 tmp_list.append(tmp_board)
             boards.append(tmp_list)
 
-        # initialize_board
+        # initialize_position_board
         all_square = self.definitions.get_all_square()
+        initialize_pos_with_black1 = (4, 3)
+        initialize_pos_with_white1 = (3, 3)
+        initialize_pos_with_black2 = (3, 4)
+        initialize_pos_with_white2 = (4, 4)
+
+        is_black = True
+        boards[initialize_pos_with_black1[0]][initialize_pos_with_black1[1]].put(is_black)
+        boards[initialize_pos_with_white1[0]][initialize_pos_with_white1[1]].put(not is_black)
+        boards[initialize_pos_with_black2[0]][initialize_pos_with_black2[1]].put(is_black)
+        boards[initialize_pos_with_white2[0]][initialize_pos_with_white2[1]].put(not is_black)
         
         return boards
 

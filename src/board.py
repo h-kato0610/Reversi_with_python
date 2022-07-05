@@ -26,5 +26,5 @@ class Board:
     def draw_square(self, pygame, screen, color):
         return pygame.draw.rect(screen, color, self.rect, width=1)
 
-    def put(self):
-        raise NotImplementedError
+    def put(self, is_black):
+        self.stone.is_black = is_black
