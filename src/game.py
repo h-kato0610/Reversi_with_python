@@ -39,13 +39,23 @@ class Game:
         for board in boards:
             [i.draw_square(pygame, self.screen, square_color) for i in board]
 
+        square_width = self.definitions.get_square_width()
+        square_height = self.definitions.get_square_height()
+        
+        # FIX:「is_black」をフィールドにするのは微妙？
+        self.__is_black = True
         while(True):
             # ミリ秒での更新間隔。
             pygame.time.wait(self.definitions.get_display_time_wait())
             pygame.display.update()
-
-            # 終了処理
             for event in pygame.event.get():
+                if event.type == MOUSEBUTTONDOWN and event.button == 1:
+                    x, y =  event.pos
+                    board_x = (x // square_width)
+                    board_y = (y // square_height)
+                    boards[board_y][board_x].put(pygame, self.screen, self.__is_black)
+                    self.__is_black = not self.__is_black
+                # 終了処理
                 if event.type == QUIT:
                     self.__end()
                 if event.type == KEYDOWN:
