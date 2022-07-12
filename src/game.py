@@ -41,20 +41,20 @@ class Game:
 
         square_width = self.definitions.get_square_width()
         square_height = self.definitions.get_square_height()
+        self.__is_black = True
+
         while(True):
             # ms秒での更新間隔.
             pygame.time.wait(self.definitions.get_display_time_wait())
             pygame.display.update()
-            # [self.is_black]をフィールドとするのは微妙?
-            self.is_black = True
             for event in pygame.event.get():
                 if event.type == MOUSEBUTTONDOWN and event.button == 1:
                     x, y = event.pos
                     click_x = int(x // square_width)
                     click_y = int(y // square_height)
 
-                    boards[click_y][click_x].put(pygame, self.screen, self.is_black)
-                    self.is_black = not self.is_black
+                    boards[click_y][click_x].put(pygame, self.screen, self.__is_black)
+                    self.__is_black = not self.__is_black
                 # End process
                 if event.type == QUIT:
                     self.__end()
