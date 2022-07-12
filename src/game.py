@@ -53,7 +53,7 @@ class Game:
                     click_y = int(y // square_height)
 
                     is_black=True
-                    boards[click_x][click_y].put(pygame, self.screen, is_black)
+                    boards[click_y][click_x].put(pygame, self.screen, is_black)
                 if event.type == QUIT:
                     self.__end()
                 if event.type == KEYDOWN:
