@@ -1,5 +1,3 @@
-import pygame
-
 from stone import Stone
 
 from pygame.locals import *
