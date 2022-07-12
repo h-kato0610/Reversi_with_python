@@ -53,7 +53,7 @@ class Game:
                     x, y =  event.pos
                     board_x = (x // square_width)
                     board_y = (y // square_height)
-                    boards[board_y][board_x].put(pygame, self.screen, self.__is_black)
+                    boards[board_y][board_x].put_stone(pygame, self.screen, self.__is_black)
                     self.__is_black = not self.__is_black
                 # 終了処理
                 if event.type == QUIT:
@@ -99,10 +99,10 @@ class Game:
         init_pos_white2 = (4, 4)
 
         is_black = True
-        boards[init_pos_black1[0]][init_pos_black1[1]].put(pygame, self.screen, is_black)
-        boards[init_pos_white1[0]][init_pos_white1[1]].put(pygame, self.screen, not is_black)
-        boards[init_pos_black2[0]][init_pos_black2[1]].put(pygame, self.screen, is_black)
-        boards[init_pos_white2[0]][init_pos_white2[1]].put(pygame, self.screen, not is_black)
+        boards[init_pos_black1[0]][init_pos_black1[1]].put_stone(pygame, self.screen, is_black)
+        boards[init_pos_white1[0]][init_pos_white1[1]].put_stone(pygame, self.screen, not is_black)
+        boards[init_pos_black2[0]][init_pos_black2[1]].put_stone(pygame, self.screen, is_black)
+        boards[init_pos_white2[0]][init_pos_white2[1]].put_stone(pygame, self.screen, not is_black)
         
         return boards
 
